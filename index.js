@@ -14,7 +14,7 @@ app.listen(process.env.PORT || 3333, () => {
     app.get('/', function (req, res) {
         res.send('hello world')
     })
-    app.get('/set', function (req, res) {
+    app.post('/set', function (req, res) {
         db.get('data').push({header: req.headers}).write();
         res.send('ok').status(200);
     })
