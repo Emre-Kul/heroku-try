@@ -9,7 +9,7 @@ const adapter = new FileSync('db.json')
 const db = low(adapter)
 
 db.defaults({ data: []}).write()
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.listen(process.env.PORT || 3333, () => {
     
